@@ -16,7 +16,7 @@ export const sendVerificationEmail = async (email, verificationToken) => {
     from: process.env.EMAIL_USER,
     to: email,
     subject: 'Email Verification',
-    text: `Click to verify: http://localhost:8000/verify/${verificationToken}`,
+    text: `Click to verify: http://localhost:8000/auth/verify/${verificationToken}`,
   };
 
   try {

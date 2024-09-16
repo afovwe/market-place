@@ -14,6 +14,7 @@ export const register = async (req, res) => {
 
     const newUser = new User({ name, email, password });
     newUser.verificationToken = crypto.randomBytes(20).toString('hex');
+    //save user to database
     await newUser.save();
 
     sendVerificationEmail(newUser.email, newUser.verificationToken);
